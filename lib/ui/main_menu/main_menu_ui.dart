@@ -20,7 +20,7 @@ class MainMenuPage extends StatelessWidget {
           Align(
             alignment: Alignment.topCenter,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: MediaQuery.of(context).size.height * 0.4,
               width: double.infinity,
               decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -56,7 +56,7 @@ class MainMenuPage extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  const SizedBox(height: 50.0),
+                  const SizedBox(height: 70.0),
                   const Text(
                     'Countdown Acara',
                     style: TextStyle(
@@ -92,7 +92,7 @@ class MainMenuPage extends StatelessWidget {
                 pageController: pageController,
               ),
               Positioned(
-                bottom: MediaQuery.of(context).size.height * 0.42,
+                bottom: MediaQuery.of(context).size.height * 0.52,
                 child: Image.asset(
                   'assets/images/flower.png',
                   fit: BoxFit.contain,

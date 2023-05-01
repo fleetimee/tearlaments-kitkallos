@@ -12,7 +12,7 @@ class MainMenuAnnouncementCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.50,
+      height: MediaQuery.of(context).size.height * 0.60,
       width: MediaQuery.of(context).size.width * 0.9,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
@@ -107,23 +107,25 @@ class MainMenuAnnouncementCard extends StatelessWidget {
             ),
             // Button to switch to the first page
             const SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the first index pageview
-                pageController.animateToPage(
-                  0,
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.fastLinearToSlowEaseIn,
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: ColorConstant.appBarFont,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+            Flexible(
+              child: ElevatedButton(
+                onPressed: () {
+                  // Navigate to the first index pageview
+                  pageController.animateToPage(
+                    0,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.fastLinearToSlowEaseIn,
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: ColorConstant.appBarFont,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
+                child: const Text('Lihat Lokasi'),
               ),
-              child: const Text('Lihat Lokasi'),
             ),
           ],
         ),
