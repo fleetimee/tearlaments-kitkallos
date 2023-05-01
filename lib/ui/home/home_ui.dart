@@ -1,10 +1,12 @@
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:fleetime_invitation/common/constant/color_constant.dart';
+import 'package:fleetime_invitation/common/constant/string_constant.dart';
 import 'package:fleetime_invitation/ui/contact/contact_ui.dart';
 import 'package:fleetime_invitation/ui/gallery/gallery_ui.dart';
 import 'package:fleetime_invitation/ui/main_menu/main_menu_ui.dart';
 import 'package:fleetime_invitation/ui/maps/maps_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   final String? nama;
@@ -26,12 +28,79 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      buildWelcomeDialog(context);
+    });
   }
 
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
+  }
+
+  void buildWelcomeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Text(
+              'Kepada',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+                fontFamily: GoogleFonts.montaga().fontFamily,
+              ),
+            ),
+          ),
+          content: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Yth ${widget.nama ?? 'Guest'}!',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: GoogleFonts.montaga().fontFamily,
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                Text(
+                  StringConstant.invitationMessage,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: GoogleFonts.montaga().fontFamily,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              style: TextButton.styleFrom(
+                foregroundColor: ColorConstant.appBarFont,
+                backgroundColor: Theme.of(context).primaryColor,
+                minimumSize: const Size(100.0, 40.0),
+              ),
+              child: const Text(
+                'TUTUP',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
   }
 
   @override
