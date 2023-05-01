@@ -1,0 +1,32 @@
+name: fleetime_invitation
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+
+dependencies:
+  animated_notch_bottom_bar: ^0.0.6
+  auto_size_text: ^3.0.0
+  cached_network_image: ^3.2.3
+  circular_reveal_animation: ^2.0.1
+  flex_color_scheme: ^7.0.5
+  flutter:
+    sdk: flutter
+  flutter_map: ^3.1.0
+  flutter_map_marker_popup: ^4.0.2
+  google_fonts: ^4.0.4
+  latlong2: ^0.8.1
+  maps_launcher: ^2.2.0
+  responsive_framework: ^1.0.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
