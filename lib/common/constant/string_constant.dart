@@ -6,7 +6,7 @@ class StringConstant {
       '''Assalamualaikum warahmatullahi wabarokatuh,
 
 Bismillahirrahmanirrahim
-Tanpa mengurangi rasa hormat, perkenankan kami mengundang untuk menghadiri acara tasyakuran khitanan anak kami:
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang secara digital untuk menghadiri acara tasyakuran khitanan anak kami:
   
 Nicky Akbar Dwicahyo
   
